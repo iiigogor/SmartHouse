@@ -6,11 +6,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RadioTest {
     //переключение станций
+    Radio rad = new Radio();
 
     //Тест  больше 9
     @Test
     void setCurrentStationUp9() {
-        Radio rad = new Radio();
         rad.setCurrentStation(20);
         assertEquals(0, rad.getCurrentStation());
     }
@@ -18,7 +18,6 @@ class RadioTest {
     //Тест  <0
     @Test
     void setCurrentStationDown0() {
-        Radio rad = new Radio();
         rad.setCurrentStation(-10);
         assertEquals(0, rad.getCurrentStation());
     }
@@ -26,7 +25,6 @@ class RadioTest {
     //повышение внутри диапазона
     @Test
     void switchToNextUpStation() {
-        Radio rad = new Radio();
         rad.setCurrentStation(5);
         assertEquals(6, rad.switchToNextUpStation());
     }
@@ -34,7 +32,6 @@ class RadioTest {
     //повышение- граничное значение =9
     @Test
     void testForUp9Station() {
-        Radio rad = new Radio();
         rad.setCurrentStation(9);
         assertEquals(0, rad.switchToNextUpStation());
     }
@@ -43,7 +40,6 @@ class RadioTest {
     //повышение граничное значение =0
     @Test
     void testForUp0Station() {
-        Radio rad = new Radio();
         rad.setCurrentStation(0);
         assertEquals(1, rad.switchToNextUpStation());
     }
@@ -52,7 +48,6 @@ class RadioTest {
     //внутри диапазона
     @Test
     public void switchToPrevDownStation() {
-        Radio rad = new Radio();
         rad.setCurrentStation(6);
         assertEquals(5, rad.switchToPrevDownStation());
     }
@@ -60,7 +55,6 @@ class RadioTest {
     //понижение граница =9
     @Test
     void testForDown9Station() {
-        Radio rad = new Radio();
         rad.setCurrentStation(9);
         assertEquals(8, rad.switchToPrevDownStation());
     }
@@ -68,7 +62,6 @@ class RadioTest {
     //понижение граница =0
     @Test
     void testForDown0Station() {
-        Radio rad = new Radio();
         rad.setCurrentStation(0);
         assertEquals(9, rad.switchToPrevDownStation());
     }
@@ -78,7 +71,6 @@ class RadioTest {
     // Тест >10
     @Test
     void setCurrentVolumeUp10() {
-        Radio rad = new Radio();
         rad.setCurrentVolume(20);
         assertEquals(0, rad.getCurrentVolume());
     }
@@ -86,7 +78,6 @@ class RadioTest {
     // Тест <0
     @Test
     void setCurrentVolumeDown0() {
-        Radio rad = new Radio();
         rad.setCurrentVolume(-10);
         assertEquals(0, rad.getCurrentVolume());
     }
@@ -94,7 +85,6 @@ class RadioTest {
     //Повышение внутри диапазона
     @Test
     void increaseVolume() {
-        Radio rad = new Radio();
         rad.setCurrentVolume(2);
         assertEquals(3, rad.increaseVolume());
     }
@@ -102,7 +92,6 @@ class RadioTest {
     // Понижение внутри диапазона
     @Test
     void decreaseVolume() {
-        Radio rad = new Radio();
         rad.setCurrentVolume(5);
         assertEquals(4, rad.decreaseVolume());
     }
@@ -110,7 +99,6 @@ class RadioTest {
     //Граница 10 - повышение
     @Test
     void increaseVolumeToUp10() {
-        Radio rad = new Radio();
         rad.setCurrentVolume(10);
         assertEquals(10, rad.increaseVolume());
     }
@@ -118,7 +106,6 @@ class RadioTest {
     //Граница 0 - понижение
     @Test
     void decreaseVolumeTuDown0() {
-        Radio rad = new Radio();
         rad.setCurrentVolume(0);
         assertEquals(0, rad.decreaseVolume());
     }

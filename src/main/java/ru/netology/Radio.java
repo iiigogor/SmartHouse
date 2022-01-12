@@ -3,8 +3,9 @@ package ru.netology;
 public class Radio {
 
     // переключатель станций
-    private int currentStation;
+   // private int[]currentStation = new int[10];
 
+   private int currentStation;
 
     public int getCurrentStation() {
 
