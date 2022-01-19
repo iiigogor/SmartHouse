@@ -9,28 +9,30 @@ class RadioTest {
 
     // количество станций
     @Test
-    void ConstructorFor5(){
-        Radio rad1=new Radio();
+    void ConstructorFor5() {
+        Radio rad1 = new Radio();
         rad1.setTotalStation(5);
-        assertEquals(4,rad1.countMaxStation());
+        assertEquals(4, rad1.countMaxStation());
     }
-//заграница
+
+    //заграница
     @Test
-    void ConstructorUp10(){
-        Radio rad1=new Radio();
+    void ConstructorUp10() {
+        Radio rad1 = new Radio();
         rad1.setTotalStation(11);
-        assertEquals(10,rad1.countMaxStation());
+        assertEquals(10, rad1.countMaxStation());
     }
 
     @Test
-    void countMaxStationFor0(){
-        Radio rad1= new Radio (0);
+    void countMaxStationFor0() {
+        Radio rad1 = new Radio(0);
         assertEquals(0, rad1.countMaxStation());
     }
+
     @Test
-    void setTotalStationfor5(){
-        Radio rad1= new Radio (15);
-        assertEquals(14,rad1.countMaxStation());
+    void setTotalStationfor5() {
+        Radio rad1 = new Radio(15);
+        assertEquals(14, rad1.countMaxStation());
     }
 
 

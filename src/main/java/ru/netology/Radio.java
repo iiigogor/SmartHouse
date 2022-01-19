@@ -2,11 +2,11 @@ package ru.netology;
 
 public class Radio {
     // переключатель станций
-    private int totalStation=10;
+    private int totalStation = 10;
 
 
     //конструктор по умолчанию -
-    public Radio(){
+    public Radio() {
 
     }
     //конструктор с количеством станций
@@ -25,13 +25,13 @@ public class Radio {
 
     public int countMaxStation() {
         if (totalStation < 1) {
-            System.out.println(totalStation+" -неверное количество станций ");
-        return 0;}
+            System.out.println(totalStation + " -неверное количество станций ");
+            return 0;
+        }
         return totalStation - 1;
     }
 
 
-    // старый код
     private int currentStation;
 
 
