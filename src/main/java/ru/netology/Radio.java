@@ -1,6 +1,6 @@
 package ru.netology;
 
-public class Radio {
+public class Radio{
     // переключатель станций
     private int totalStation = 10;
 
