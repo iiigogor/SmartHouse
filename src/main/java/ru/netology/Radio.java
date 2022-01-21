@@ -1,8 +1,37 @@
 package ru.netology;
 
-public class Radio {
-
+public class Radio{
     // переключатель станций
+    private int totalStation = 10;
+
+
+    //конструктор по умолчанию -
+    public Radio() {
+
+    }
+    //конструктор с количеством станций
+
+    public Radio(int totalStation) {
+        this.totalStation = totalStation;
+    }
+
+    public void setTotalStation(int totalStation) {
+        this.totalStation = totalStation;
+    }
+
+    public int getTotalStation() {
+        return totalStation;
+    }
+
+    public int countMaxStation() {
+        if (totalStation < 1) {
+            System.out.println(totalStation + " -неверное количество станций ");
+            return 0;
+        }
+        return totalStation - 1;
+    }
+
+
     private int currentStation;
 
 
@@ -12,7 +41,7 @@ public class Radio {
     }
 
     public void setCurrentStation(int currentStation) {
-        if (currentStation < 0 | currentStation > 9) {
+        if (currentStation < 0 | currentStation > totalStation - 1) {
             System.out.println("Неверный номер станции");
             return;
         }
@@ -20,7 +49,7 @@ public class Radio {
     }
 
     public int switchToNextUpStation() {
-        if (currentStation == 9) {
+        if (currentStation == totalStation - 1) {
             currentStation = 0;
             return currentStation;
         }
@@ -31,7 +60,7 @@ public class Radio {
     public int switchToPrevDownStation() {
 
         if (currentStation == 0) {
-            currentStation = 9;
+            currentStation = totalStation - 1;
             return currentStation;
         }
         currentStation--;
@@ -47,7 +76,7 @@ public class Radio {
     }
 
     public void setCurrentVolume(int currentVolume) {
-        if (currentVolume < 0 | currentVolume > 10) {
+        if (currentVolume < 0 | currentVolume > 100) {
             System.out.println("Неверное значение громкости");
             return;
         }
@@ -56,9 +85,9 @@ public class Radio {
 
     public int increaseVolume() {
 
-        if (currentVolume == 10) {
+        if (currentVolume == 100) {
             System.out.println("Maximum volume");
-            currentVolume = 10;
+            currentVolume = 100;
             return currentVolume;
         }
         currentVolume++;

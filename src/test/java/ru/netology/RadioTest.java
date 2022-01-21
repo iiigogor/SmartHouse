@@ -7,6 +7,35 @@ import static org.junit.jupiter.api.Assertions.*;
 class RadioTest {
     //переключение станций
 
+    // количество станций
+    @Test
+    void ConstructorFor5() {
+        Radio rad1 = new Radio();
+        rad1.setTotalStation(5);
+        assertEquals(4, rad1.countMaxStation());
+    }
+
+    //заграница
+    @Test
+    void ConstructorUp10() {
+        Radio rad1 = new Radio();
+        rad1.setTotalStation(11);
+        assertEquals(10, rad1.countMaxStation());
+    }
+
+    @Test
+    void countMaxStationFor0() {
+        Radio rad1 = new Radio(0);
+        assertEquals(0, rad1.countMaxStation());
+    }
+
+    @Test
+    void setTotalStationfor5() {
+        Radio rad1 = new Radio(15);
+        assertEquals(14, rad1.countMaxStation());
+    }
+
+
     //Тест  больше 9
     @Test
     void setCurrentStationUp9() {
@@ -75,11 +104,11 @@ class RadioTest {
 
     // Регулятор громкости
 
-    // Тест >10
+    // Тест >100
     @Test
-    void setCurrentVolumeUp10() {
+    void setCurrentVolumeUp100() {
         Radio rad = new Radio();
-        rad.setCurrentVolume(20);
+        rad.setCurrentVolume(120);
         assertEquals(0, rad.getCurrentVolume());
     }
 
@@ -95,24 +124,24 @@ class RadioTest {
     @Test
     void increaseVolume() {
         Radio rad = new Radio();
-        rad.setCurrentVolume(2);
-        assertEquals(3, rad.increaseVolume());
+        rad.setCurrentVolume(20);
+        assertEquals(21, rad.increaseVolume());
     }
 
     // Понижение внутри диапазона
     @Test
     void decreaseVolume() {
         Radio rad = new Radio();
-        rad.setCurrentVolume(5);
-        assertEquals(4, rad.decreaseVolume());
+        rad.setCurrentVolume(50);
+        assertEquals(49, rad.decreaseVolume());
     }
 
-    //Граница 10 - повышение
+    //Граница 100 - повышение
     @Test
     void increaseVolumeToUp10() {
         Radio rad = new Radio();
-        rad.setCurrentVolume(10);
-        assertEquals(10, rad.increaseVolume());
+        rad.setCurrentVolume(100);
+        assertEquals(100, rad.increaseVolume());
     }
 
     //Граница 0 - понижение
