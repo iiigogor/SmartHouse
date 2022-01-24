@@ -1,9 +1,10 @@
 package ru.netology;
 
 public class Radio{
-    // переключатель станций
     private int totalStation = 10;
+    private int currentVolume;
 
+    // переключатель станций
 
     //конструктор по умолчанию -
     public Radio() {
@@ -69,7 +70,7 @@ public class Radio{
 
 
     //    переключатель громкости
-    private int currentVolume;
+
 
     public int getCurrentVolume() {
         return currentVolume;
